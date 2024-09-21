@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace></RootNamespace>
+    <NoWarn>CS0649;CS0169;CA1050;CA1822;CA2211;IDE1006</NoWarn>
+    <NukeRootDirectory>..</NukeRootDirectory>
+    <NukeScriptDirectory>..</NukeScriptDirectory>
+    <NukeTelemetryVersion>1</NukeTelemetryVersion>
+    
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>build-sphere</ToolCommandName>
+    <PackageOutputPath>../.nupkg</PackageOutputPath>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="..\configs\git-cliff.toml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nuke.Common" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="minver-cli" Version="[6.0.0]" ExcludeAssets="all" />
+  </ItemGroup>
+
+</Project>
