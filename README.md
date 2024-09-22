@@ -1,6 +1,6 @@
 # BuildSphere
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/phmatray/BuildSphere/build.yml?branch=main&label=build) ![NuGet](https://img.shields.io/nuget/v/BuildSphere) ![License](https://img.shields.io/github/license/phmatray/BuildSphere)
+![Build Status](https://img.shields.io/github/actions/workflow/status/phmatray/BuildSphere/build.yml?branch=main&label=build) ![NuGet](https://img.shields.io/nuget/v/BuildSphere) ![NuGet](https://img.shields.io/nuget/v/BuildSphere) ![License](https://img.shields.io/github/license/phmatray/BuildSphere)
 
 BuildSphere is a powerful and intuitive .NET global build tool designed to streamline the building and deployment of .NET applications to NuGet and GitHub. Leveraging modern tools like Nuke, MinVer, and Git-Cliff, BuildSphere simplifies your development workflow, ensuring consistent and efficient builds across all your projects.
 
