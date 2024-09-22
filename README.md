@@ -130,6 +130,10 @@ If you need to customize `git-cliff.toml`, modify the embedded resource in the B
 
 BuildSphere provides a suite of commands to automate your build and deployment processes.
 
+### All tasks in a glance
+
+![BuildSphere Tasks](./tasks.png)
+
 ### Generating the Changelog
 
 To generate or update the `CHANGELOG.md` using Git-Cliff:
