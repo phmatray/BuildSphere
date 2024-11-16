@@ -11,7 +11,7 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>build-sphere</ToolCommandName>
     <PackageOutputPath>../.nupkg</PackageOutputPath>
-    <Version>0.3.2</Version>
+    <Version>0.4.0</Version>
 
     <!-- Package Metadata -->
     <PackageId>BuildSphere</PackageId>
