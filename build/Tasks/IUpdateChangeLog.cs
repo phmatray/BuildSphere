@@ -66,7 +66,10 @@ public interface IUpdateChangeLog : INukeBuild
             var gitCliffProcess = ProcessTasks.StartProcess(gitCliffPath, gitCliffArguments);
             gitCliffProcess.AssertZeroExitCode();
             
-            // Step 4: Check if CHANGELOG.md was modified
+            // Step 4: Stage the CHANGELOG.md file
+            Git($"add \"{ChangelogFile}\"");
+            
+            // Step 5: Check if CHANGELOG.md was modified
             Information("Checking if CHANGELOG.md has been updated...");
             
             // Get the relative path of CHANGELOG.md from the repository root
@@ -80,13 +83,11 @@ public interface IUpdateChangeLog : INukeBuild
                 .ToList();
 
             var changelogChanged = changedFiles.Contains(changelogRelativePath);
-
+            
             if (changelogChanged)
             {
                 Information("CHANGELOG.md has been updated. Preparing to commit the changes...");
 
-                // Step 5: Stage the CHANGELOG.md file
-                Git($"add \"{ChangelogFile}\"");
 
                 // Step 6: Create a new commit with a meaningful message
                 const string commitMessage = "chore: update CHANGELOG.md";

@@ -1,6 +1,6 @@
 # BuildSphere
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/phmatray/BuildSphere/build.yml?branch=main&label=build) ![NuGet](https://img.shields.io/nuget/v/BuildSphere) ![NuGet](https://img.shields.io/nuget/v/BuildSphere) ![License](https://img.shields.io/github/license/phmatray/BuildSphere)
+![Build Status](https://img.shields.io/github/actions/workflow/status/phmatray/BuildSphere/build.yml?branch=main&label=build) ![NuGet](https://img.shields.io/nuget/v/BuildSphere) ![License](https://img.shields.io/github/license/phmatray/BuildSphere)
 
 BuildSphere is a powerful and intuitive .NET global build tool designed to streamline the building and deployment of .NET applications to NuGet and GitHub. Leveraging modern tools like Nuke, MinVer, and Git-Cliff, BuildSphere simplifies your development workflow, ensuring consistent and efficient builds across all your projects.
 
@@ -33,7 +33,7 @@ BuildSphere is a powerful and intuitive .NET global build tool designed to strea
 
 BuildSphere relies on the following tools:
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or later)
+- [.NET SDK](https://dotnet.microsoft.com/download) (version 9.0 or later)
 - [Nuke](https://nuke.build/) - A modern build automation system for .NET.
 - [MinVer](https://github.com/adamralph/minver) - Automatic semantic versioning using Git tags.
 - [Git-Cliff](https://github.com/orhun/git-cliff) - A Git-based changelog generator.
@@ -44,7 +44,7 @@ BuildSphere relies on the following tools:
 
 Ensure you have the following installed on your machine:
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or later)
+- [.NET SDK](https://dotnet.microsoft.com/download) (version 9.0 or later)
 - [Git](https://git-scm.com/downloads)
 - [Git-Cliff](https://github.com/orhun/git-cliff) (Install via Homebrew, Scoop, or other package managers)
 
@@ -66,7 +66,7 @@ Ensure you have the following installed on your machine:
    dotnet pack -c Release
    ```
 
-   The NuGet package (`BuildSphere.0.1.0.nupkg`) will be available in the `./.nupkg` directory.
+   The NuGet package (`BuildSphere.0.3.0.nupkg`) will be available in the `./.nupkg` directory.
 
 3. **Install as a Local Tool:**
 
@@ -77,7 +77,7 @@ Ensure you have the following installed on your machine:
    dotnet tool install --add-source ../BuildSphere/.nupkg BuildSphere
    ```
 
-   > **Note:** Replace `../BuildSphere/.nupkg` with the relative path to the `.nupkg` file if your directory structure differs.
+   > **Note:** Replace `../BuildSphere/.nupkg` with the relative or absolute path to the `.nupkg` file if your directory structure differs.
 
 ### Install BuildSphere as a Global Tool
 

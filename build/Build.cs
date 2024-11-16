@@ -20,6 +20,7 @@ global using static Serilog.Log;
 //     ImportSecrets = [nameof(NuGetApiKey)])]
 class Build : NukeBuild,
     ICompileProjects,
+    ITestJavaScript,
     IUpdateChangeLog,
     IGenerateDocs,
     IHandleNuGetPackage,

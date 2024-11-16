@@ -2,8 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace></RootNamespace>
+    <TargetFramework>net9.0</TargetFramework>
     <NoWarn>CS0649;CS0169;CA1050;CA1822;CA2211;IDE1006</NoWarn>
     <NukeRootDirectory>..</NukeRootDirectory>
     <NukeScriptDirectory>..</NukeScriptDirectory>
@@ -12,7 +11,32 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>build-sphere</ToolCommandName>
     <PackageOutputPath>../.nupkg</PackageOutputPath>
-    <Version>0.1.0</Version>
+    <Version>0.3.1</Version>
+
+    <!-- Package Metadata -->
+    <PackageId>BuildSphere</PackageId>
+    <Authors>Philippe Matray</Authors>
+    <Company>Atypical Consulting SRL</Company>
+    <Product>BuildSphere</Product>
+    <Description>Streamline the building and deployment of .NET applications to NuGet and GitHub.</Description>
+    <PackageTags>Build; Deploy; NuGet; GitHub; .NET</PackageTags>
+    <RepositoryUrl>https://github.com/phmatray/BuildSphere</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/phmatray/BuildSphere</PackageProjectUrl>
+    <PackageIcon>./logo.png</PackageIcon>
+    <PackageReadmeFile>./README.md</PackageReadmeFile>
+    <Summary>Streamline the building and deployment of .NET applications to NuGet and GitHub.</Summary>
+    <Copyright>© Atypical Consulting SRL, 2024</Copyright>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+    <!-- Build Properties -->
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <RootNamespace></RootNamespace>
   </PropertyGroup>
   
   <ItemGroup>
@@ -20,11 +44,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nuke.Common" Version="8.1.0" />
+    <PackageReference Include="Nuke.Common" Version="8.1.4" />
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="minver-cli" Version="[6.0.0]" ExcludeAssets="all" />
+    <PackageReference Include="docfx.console" Version="[2.59.4]" ExcludeAssets="all" />
+  </ItemGroup>
+
+  <!-- Ensure README.md, LICENSE and logo.png are included in the package -->
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="..\logo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
