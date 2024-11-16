@@ -34,13 +34,17 @@ public interface IThankContributors : INukeBuild
                     .Concat($"- {newContributor.Name}")
                     .OrderBy(x => x);
                 ContributorsFile.WriteAllLines(content, Encoding.Default);
+                
+                // Add only the CONTRIBUTORS.md file
                 Git($"add {ContributorsFile}");
 
+                // Commit only the CONTRIBUTORS.md file
                 var message = $"chore: add {newContributor.Name} as contributor".DoubleQuote();
                 var author = $"{newContributor.Name} <{newContributor.Email}>".DoubleQuote();
-                Git($"commit -m {message} --author {author}");
+                Git($"commit {ContributorsFile} -m {message} --author {author}");
             }
 
+            // Update the cache with all contributors' emails
             ContributorsCacheFile.WriteAllLines(contributors.Select(x => x.Email).ToList());
         });
 }

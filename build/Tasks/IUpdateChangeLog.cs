@@ -20,8 +20,9 @@ public interface IUpdateChangeLog : INukeBuild
             Information("Validating git-cliff installation...");
             var gitCliffPath =
                 ToolPathResolver.GetPathExecutable("git-cliff")
-                ?? throw new Exception("git-cliff is not installed or not found in PATH. " +
-                                       " Please install git-cliff and ensure it's available in your system's PATH.");
+                ?? throw new Exception(
+                    "git-cliff is not installed or not found in PATH. " +
+                    "Please install git-cliff and ensure it's available in your system's PATH.");
 
             // Step 2: Check if git-cliff configuration file exists
             Information("Retrieving embedded git-cliff.toml configuration...");
