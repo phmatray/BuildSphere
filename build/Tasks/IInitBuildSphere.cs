@@ -15,16 +15,11 @@ public interface IInitBuildSphere : INukeBuildSphere
         {
             Information("Initializing build sphere...");
 
-            // Create the .nuke directory if it doesn't exist
-            if (!NukeDirectory.Exists())
-            {
-                Information("Creating .nuke directory...");
-                NukeDirectory.CreateDirectory();
-            }
-            
             // Create the .nuke/parameters.json file if it doesn't exist
             if (!NukeParametersFile.Exists())
             {
+                Information("Creating .nuke/parameters.json file...");
+                
                 // Locate the solution file
                 var solutionFile = RootDirectory
                     .GlobFiles("*.sln")
@@ -35,13 +30,15 @@ public interface IInitBuildSphere : INukeBuildSphere
                     throw new FileNotFoundException("Solution file not found.");
                 }
             
-                Information("Solution file located at: {0}", solutionFile);
+                RelativePath solutionFileRelativePath = RootDirectory.GetRelativePathTo(solutionFile);
+                
+                Information("Solution file located at: {0}", solutionFileRelativePath);
             
                 var parametersFileContent =
                     $$"""
                       {
                           "$schema": "build.schema.json",
-                          "Solution": "{{solutionFile}}"
+                          "Solution": "{{solutionFileRelativePath}}"
                       }
                       """;
             

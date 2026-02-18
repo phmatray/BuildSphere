@@ -19,6 +19,7 @@ global using static Serilog.Log;
 //     ],
 //     ImportSecrets = [nameof(NuGetApiKey)])]
 class Build : NukeBuild,
+    IInitBuildSphere,
     ICompileProjects,
     ITestJavaScript,
     IUpdateChangeLog,
