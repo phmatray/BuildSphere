@@ -49,7 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="minver-cli" Version="[6.0.0]" ExcludeAssets="all" />
+    <PackageReference Include="minver-cli" Version="[7.0.0]" ExcludeAssets="all" />
     <PackageReference Include="docfx.console" Version="[2.59.4]" ExcludeAssets="all" />
   </ItemGroup>
 
