@@ -219,6 +219,17 @@ jobs:
 
 > **Note:** Adjust the `--add-source` path based on where your `.nupkg` file is located.
 
+<!-- portfolio-techstack:start -->
+
+## Tech Stack
+
+- **.NET 10**
+- Nuke.Common
+- System.Runtime.Serialization.Formatters
+- docfx.console
+
+<!-- portfolio-techstack:end -->
+
 ## Contributing
 
 Contributions are welcome! Whether it's reporting bugs, suggesting features, or submitting pull requests, your input helps make BuildSphere better.
