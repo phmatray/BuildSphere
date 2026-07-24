@@ -3,7 +3,7 @@ using Nuke.Common.Tools.MinVer;
 
 public interface INukeBuildSphere : INukeBuild
 {
-    [Solution(SuppressBuildProjectCheck = true)]
+    [Solution]
     Solution Solution
         => TryGetValue(() => Solution);
     

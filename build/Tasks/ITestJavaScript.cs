@@ -9,10 +9,7 @@ public interface ITestJavaScript : INukeBuildSphere
         .Executes(() =>
         {
             Information("Testing JavaScript with Jest...");
-            
-            // Redirect NPM output to Serilog
-            NpmLogger = (outputType, text) => Log.Information(text);
-        
+
             // Define the path to the Jest tests directory
             var jestTestProjects = RootDirectory
                 .GlobDirectories("**/*.JsTests")
